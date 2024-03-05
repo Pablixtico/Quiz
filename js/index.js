@@ -1,12 +1,12 @@
 "use strict"
 let datos;
 
+
 window.onload = recibir();
 
 function delay(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
-
 function recibir(){
   
   fetch("https://opentdb.com/api.php?amount=10").then((response) => {
@@ -25,6 +25,9 @@ let answers = [];
 let actualquestion = 0;
 
 function cargardatos(results){
+let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3")
+  audio.play();
+  audio.volume = 0.3;
   datos = results;
   console.log(datos); 
   let buttons = document.getElementsByClassName("ans")
@@ -81,7 +84,7 @@ if(e.target.textContent!=decodeHtml(datos[actualquestion].correct_answer)){
   setTimeout(() => {
     document.getElementsByClassName("quiz-card")[0].classList.add("animate__wobble")
     loadActualQuestion();
-  }, 3000);
+  }, 1500);
 }
 
 function checkCorrect(){
