@@ -28,6 +28,7 @@ function cargardatos(results){
 let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3")
   audio.play();
   audio.volume = 0.3;
+  audio.loop = true;
   datos = results;
   console.log(datos); 
   let buttons = document.getElementsByClassName("ans")
