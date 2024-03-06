@@ -23,11 +23,16 @@ function recibir(){
 
 let answers = [];
 let actualquestion = 0;
+let playmusic = false;
 window.onclick = (e) => {
-  let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3")
-  audio.play();
-  audio.volume = 0.3;
-  audio.loop = true;
+  if(!playmusic){
+    let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3")
+    audio.play();
+    audio.volume = 0.3;
+    audio.loop = true;
+    playmusic = true;
+  }
+
 }
 function cargardatos(results){
   datos = results;
