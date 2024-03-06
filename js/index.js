@@ -23,12 +23,13 @@ function recibir(){
 
 let answers = [];
 let actualquestion = 0;
-
-function cargardatos(results){
-let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3")
+window.onclick = (e) => {
+  let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3")
   audio.play();
   audio.volume = 0.3;
   audio.loop = true;
+}
+function cargardatos(results){
   datos = results;
   console.log(datos); 
   let buttons = document.getElementsByClassName("ans")
