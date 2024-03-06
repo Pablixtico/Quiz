@@ -49,6 +49,7 @@ body::-webkit-scrollbar{
     align-items: center;
     background-color: rgba(255, 255, 255, 0.418);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     max-width: 650px;
     min-width: 100%;
     box-sizing:border-box;
@@ -146,6 +147,7 @@ body::-webkit-scrollbar{
     position: relative;
     background-color: rgba(255, 255, 255, 0.418);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     min-height: 50vh;
     width: max(45vw, 400px);
     padding: 1rem;

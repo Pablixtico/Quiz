@@ -36,7 +36,6 @@ window.onclick = (e) => {
 }
 function cargardatos(results){
   datos = results;
-  console.log(datos); 
   let buttons = document.getElementsByClassName("ans")
   for(let button of buttons){
     button.addEventListener("click", (event) => handleclick(event));
@@ -80,7 +79,6 @@ function handleclick(e){
 
   document.getElementsByClassName("quiz-card")[0].classList.remove("animate__wobble")
   answers = [...answers,{"correct":decodeHtml(datos[actualquestion].correct_answer),"checked":decodeHtml(e.target.textContent)}]
-  console.log(answers);
 
 if(e.target.textContent!=decodeHtml(datos[actualquestion].correct_answer)){
     e.target.style.backgroundColor = "red"
@@ -158,7 +156,6 @@ function finalQuiz(){
   for(let ans of answers){
       if(ans.correct === ans.checked){
         corrects++;
-        console.log(ans);
       }
   }
 
