@@ -3,6 +3,7 @@ let datos;
 let clicked = false;
 let files = [];
 let corrects = 0;
+let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3");
 
 window.onload = recibir();
 
@@ -27,7 +28,6 @@ let actualquestion = 0;
 let playmusic = false;
 window.onclick = (e) => {
   if (!playmusic) {
-    let audio = new Audio("/Quiz/music/Raul_Cabezali_-_Quiz_Show.mp3");
     audio.play();
     audio.volume = 0.3;
     audio.loop = true;
@@ -103,7 +103,7 @@ function handleclick(e) {
     e.target.style.color = "#f2f2f2";
     e.target.textContent = "✔️ " + e.target.textContent;
   }
-  if (actualquestion >= 2) {
+  if (actualquestion >= 9) {
     setTimeout(() => {
       finalQuiz();
     }, 1000);
@@ -235,3 +235,23 @@ function dataURLtoFile(dataurl, filename) {
   }
   return new File([u8arr], filename, {type:mime});
 }
+
+
+document.querySelectorAll(".initial-card button")[0].addEventListener("click", (e) => {
+
+  e.target.parentNode.style.display = "none"
+  document.getElementsByClassName("quiz-card")[0].style.display = "flex";
+})
+
+document.querySelectorAll(".volume i")[0].addEventListener("click", (e) => {
+  if(e.target.classList.contains("fa-volume-high")){
+    e.target.classList.remove("fa-volume-high");
+    e.target.classList.add("fa-volume-xmark");
+    audio.volume = 0;
+  } else {
+    e.target.classList.remove("fa-volume-xmark");
+    e.target.classList.add("fa-volume-high");
+    audio.volume = 0.5;
+  }
+  
+})

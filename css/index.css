@@ -27,6 +27,45 @@ body::-webkit-scrollbar{
     width: 0px;
 }
 
+.volume{
+    position: absolute;
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: content-box;
+}
+
+.initial-card{
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.418);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px
+}
+
+.initial-card button{
+    font-size: 20px;
+    border: 0;
+    padding: 15px;
+    padding-inline: 25px;
+    background-color: white;
+    border-radius: 10px;
+}
+
 .header {
     width: 100%;
     display: flex;
@@ -142,6 +181,7 @@ body::-webkit-scrollbar{
     flex: 1;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .quiz-card {
@@ -156,7 +196,7 @@ body::-webkit-scrollbar{
     padding-block: 2rem;
     box-sizing: content-box;
     border-radius: 30px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
